@@ -2,6 +2,7 @@ package StepsTrainer.Gui;
 
 import java.awt.BorderLayout;
 
+import StepTrainer.Listener.StartListener;
 import StepsTrainer.BorderStorage.BorderStorage;
 import StepsTrainer.ColorStorage.ColorStorage;
 
@@ -23,6 +24,8 @@ public class GuiBuilder {
 	
 	private Menu OptionMenu;
 	
+	
+	
     public GuiBuilder() {
    
     	GetColor = new ColorStorage();
@@ -35,6 +38,8 @@ public class GuiBuilder {
     		MovesField = new TextField(GetBorder, GetColor);
     		
     			StartButton = new Button(GetColor, GetBorder, "Start");
+    			
+    				StartButton.addMouseListener(new StartListener(this));
     
     			OptionMenu = new Menu(GetColor, GetBorder);
     			
@@ -59,7 +64,7 @@ public class GuiBuilder {
     }
 
 
-
+    public TextField getMovesTextField(){ return MovesField;}
 
 
 
