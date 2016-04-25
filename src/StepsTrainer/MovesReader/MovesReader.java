@@ -1,17 +1,101 @@
 package StepsTrainer.MovesReader;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
+
+import StepsTrainer.DataStorage.DataStorage;
 
 /**
  * 
  */
 public class MovesReader {
 
-    /**
-     * Default constructor
-     */
+	ArrayList<String> Moves ;
+	
     public MovesReader() {
+    	
+    	Moves = new ArrayList<String>();
+    
     }
 
-
+    public void buildArray() throws IOException
+    {
+    	if(DataStorage.Badman==true){
+    		try {
+				FileReader Reader = new FileReader("Steps/Badman.txt");
+				
+				BufferedReader BReader = new BufferedReader(Reader);
+				
+				String Move = null;
+				
+				while((Move = BReader.readLine()) != null)
+						{
+					
+						Moves.add(Move);
+					
+						}
+				
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    		
+    		
+    	}
+    	
+    	else if(DataStorage.Chill == true)
+    	{
+    		try {
+				FileReader Reader = new FileReader("Steps/Chill.txt");
+				
+				BufferedReader BReader = new BufferedReader(Reader);
+				
+				String Move = null;
+				
+				while((Move = BReader.readLine()) != null)
+						{
+					
+						Moves.add(Move);
+					
+						}
+				
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    		
+    		
+    	}else if(DataStorage.All == true)
+    	{
+    		try {
+				FileReader Reader = new FileReader("Steps/All.txt");
+				
+				BufferedReader BReader = new BufferedReader(Reader);
+				
+				String Move = null;
+				
+				while((Move = BReader.readLine()) != null)
+						{
+					
+						Moves.add(Move);
+					
+						}
+				
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    		
+    	}
+    	
+    }
+    
+    public ArrayList<String> getArray()
+    {
+    	
+    	return Moves;
+    }
 }
