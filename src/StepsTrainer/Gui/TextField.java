@@ -40,6 +40,8 @@ public class TextField extends JTextField {
     		this.setHorizontalAlignment(CENTER);
     			
     		this.setFont(new Font("Verdana", 1, 50));
+    		
+    		this.setEditable(false);
     	
     }
 

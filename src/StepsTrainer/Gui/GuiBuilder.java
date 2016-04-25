@@ -1,7 +1,6 @@
 package StepsTrainer.Gui;
 
 import java.awt.BorderLayout;
-import java.util.*;
 
 import StepsTrainer.BorderStorage.BorderStorage;
 import StepsTrainer.ColorStorage.ColorStorage;
@@ -22,6 +21,8 @@ public class GuiBuilder {
 	
 	private BorderStorage GetBorder;
 	
+	private Menu OptionMenu;
+	
     public GuiBuilder() {
    
     	GetColor = new ColorStorage();
@@ -35,6 +36,8 @@ public class GuiBuilder {
     		
     			StartButton = new Button(GetColor, GetBorder, "Start");
     
+    			OptionMenu = new Menu(GetColor, GetBorder);
+    			
     				Ramka = new Frame();
     }
 
@@ -43,6 +46,8 @@ public class GuiBuilder {
     	CenterPanel.add(MovesField);
     	
     	BottomPanel.add(StartButton);
+    	
+    		Ramka.add(OptionMenu, BorderLayout.NORTH);
     	
     		Ramka.add(CenterPanel, BorderLayout.CENTER);
     		

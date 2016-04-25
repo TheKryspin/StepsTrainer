@@ -35,7 +35,7 @@ public class Panel extends JPanel {
     		
     			FlowLayout Layout = new FlowLayout();
     			
-    			Layout.setVgap(87);
+    			Layout.setVgap(60);
     			
     				this.setLayout(Layout);
     	

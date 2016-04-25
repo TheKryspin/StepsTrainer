@@ -19,6 +19,8 @@ public class ColorStorage {
     private Color ButtonBorderViolet;
     private Color ButtonFillViolet;
     
+    private Color MenuColor;
+    
     public ColorStorage() {
     
     	CenterPanelLightBlue = new Color(23, 133, 187);
@@ -31,8 +33,16 @@ public class ColorStorage {
     	
     	ButtonFillViolet = new Color(145, 72, 112);
     	ButtonBorderViolet= new Color(91, 26, 61);
+    
+    	MenuColor = new Color(10, 58, 110);
     }
 
+    public Color getMenuColor()
+    {
+    	
+    	return MenuColor;
+    	
+    }
     
     public Color getCenterPanelLightBlue() {
         

@@ -21,7 +21,7 @@ public class Frame extends JFrame{
     
     super();
     	
-    this.setSize(new Dimension(600,500));
+    this.setSize(new Dimension(600,530));
     
     this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     
@@ -29,8 +29,9 @@ public class Frame extends JFrame{
     	
     	this.setLayout(Layout);
     
-    this.setName("Steps Trainer By TheKryspin");	
-    
+    		this.setName("Steps Trainer By TheKryspin");	
+    		
+    			this.setResizable(false);
    
     	
     }
