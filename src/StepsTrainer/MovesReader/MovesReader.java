@@ -19,11 +19,17 @@ public class MovesReader {
     	
     	Moves = new ArrayList<String>();
     
+    	try {
+			this.buildArray();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     public void buildArray() throws IOException
     {
-    	if(DataStorage.Badman==true){
+    	if(DataStorage.Badman==true && DataStorage.All == false && DataStorage.Chill == false){
     		try {
 				FileReader Reader = new FileReader("Steps/Badman.txt");
 				
@@ -35,7 +41,7 @@ public class MovesReader {
 						{
 					
 						Moves.add(Move);
-					
+	
 						}
 				
 			} catch (FileNotFoundException e) {
@@ -46,7 +52,7 @@ public class MovesReader {
     		
     	}
     	
-    	else if(DataStorage.Chill == true)
+    	else if(DataStorage.Chill == true && DataStorage.Badman == false && DataStorage.All == false)
     	{
     		try {
 				FileReader Reader = new FileReader("Steps/Chill.txt");
@@ -68,7 +74,7 @@ public class MovesReader {
 			}
     		
     		
-    	}else if(DataStorage.All == true)
+    	}else if(DataStorage.All == true && DataStorage.Badman == false && DataStorage.Chill == false)
     	{
     		try {
 				FileReader Reader = new FileReader("Steps/All.txt");

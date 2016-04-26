@@ -52,7 +52,7 @@ public class Menu extends JMenuBar {
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 					
-						if(DataStorage.Badman = false)DataStorage.Badman = true;
+						if(DataStorage.Badman == false)DataStorage.Badman = true;
 						else DataStorage.Badman  = false;
 					}
 				
@@ -61,14 +61,15 @@ public class Menu extends JMenuBar {
 					BadmanBox.setFont(new Font ("Verdana", 1, 10));
 					
 				TrybMenu.add(BadmanBox);
-			
+				TrybMenu.addSeparator();
+				
 				JCheckBoxMenuItem ChillBox = new JCheckBoxMenuItem("Chill");
 				ChillBox.addActionListener(new ActionListener(){
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 					
-						if(DataStorage.Chill = false)DataStorage.Chill = true;
+						if(DataStorage.Chill == false)DataStorage.Chill = true;
 						else DataStorage.Chill  = false;
 					}
 				
@@ -77,7 +78,8 @@ public class Menu extends JMenuBar {
 					ChillBox.setFont(new Font ("Verdana", 1, 10));
 				
 					TrybMenu.add(ChillBox);
-
+					TrybMenu.addSeparator();
+					
 
 				JCheckBoxMenuItem AllBox = new JCheckBoxMenuItem("All");
 				AllBox.addActionListener(new ActionListener(){
@@ -85,7 +87,7 @@ public class Menu extends JMenuBar {
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 					
-						if(DataStorage.All = false)DataStorage.All = true;
+						if(DataStorage.All == false)DataStorage.All = true;
 						else DataStorage.All  = false;
 					}
 				
@@ -94,6 +96,7 @@ public class Menu extends JMenuBar {
 				AllBox.setFont(new Font ("Verdana", 1, 10));
 					
 				TrybMenu.add(AllBox);
+				TrybMenu.addSeparator();
 				
 				return TrybMenu;
 		
@@ -134,6 +137,12 @@ public class Menu extends JMenuBar {
 							DataStorage.Time = Integer.parseInt(TimeAll.getText());
 							
 							DataStorage.StepTime = Integer.parseInt(TimeStep.getText());
+						
+
+							System.out.println("DataStorage Badman ="+DataStorage.Badman+ "Time =" + 
+							DataStorage.Time + "Time Step =" + DataStorage.StepTime
+									);
+							
 						}
 						
 						
