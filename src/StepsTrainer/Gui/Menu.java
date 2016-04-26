@@ -9,10 +9,13 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import StepsTrainer.BorderStorage.BorderStorage;
 import StepsTrainer.ColorStorage.ColorStorage;
@@ -32,6 +35,7 @@ public class Menu extends JMenuBar {
 					
 					this.add(this.getCzasMenu());
 					
+					this.add(this.getMusicMenu());
 	}
 	
 	
@@ -152,4 +156,47 @@ public class Menu extends JMenuBar {
 				return CzasMenu;
 		
 	}
+
+	JMenu getMusicMenu()
+	{
+		JMenu MusicMenu = new JMenu("Wybierz muzyke");
+		
+		MusicMenu.setForeground(Color.WHITE);
+		
+		MusicMenu.setFont(new Font ("Verdana", 1, 15));
+				
+			JMenuItem WybierzMuzyke = new JMenuItem("Wybierz plik");
+			
+			WybierzMuzyke.addActionListener(new ActionListener(){
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					
+					JFileChooser GetPath = new JFileChooser();
+					
+						FileNameExtensionFilter Mp3Only= new FileNameExtensionFilter("Pliki Mp3","mp3");
+					
+						GetPath.addChoosableFileFilter(Mp3Only);
+						
+						int returnVal = GetPath.showOpenDialog(getParent().getParent());
+					
+						if(returnVal == JFileChooser.APPROVE_OPTION)
+						{
+							DataStorage.Path = GetPath.getSelectedFile().getAbsolutePath();
+							
+						}
+						System.out.println(DataStorage.Path);
+				}
+						
+				
+				
+			});
+			
+			
+			MusicMenu.add(WybierzMuzyke);	
+			
+		
+		return MusicMenu;
+	}
+
 }
